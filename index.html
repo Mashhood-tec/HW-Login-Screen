@@ -22,6 +22,21 @@
       width: 200px;
       height: 400px;
     }
+
+    .button {
+      border-radius: 10px;
+      height: 50px;
+      width: 200px;
+      background: rgb(102, 166, 255);
+      color: black;
+      border: 2px solid rgb(4, 0, 255);
+    }
+    .button:hover {
+      background: rgb(0, 145, 255);
+      color: black;
+      border: 2px solid rgb(44, 0, 220);
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -30,10 +45,10 @@
     <input id="Name" type="text"> <br>
 
     <p>Age</p>
-    <input id="Age" type="text"> <br>
+    <input id="Age" type="number"> <br>
 
     <p>Birth Year</p>
-    <input id="Dob" type="text"> <br>
+    <input id="Dob" type="number" value="required"> <br>
 
     <p>Favourite Color</p>
     <input id="FavColor" type="text"> <br>
@@ -57,13 +72,16 @@
     }
 
     function generateParagraph() {
+      // Get The Values in a Variable
       const NamE = document.getElementById("Name").value;
       const AgE = document.getElementById("Age").value;
       const DoB = document.getElementById("Dob").value;
       const FavColoR = document.getElementById("FavColor").value;
 
+      // New Object
       const details1 = new Details(NamE, AgE, DoB, FavColoR);
       
+      // Display The Output
       document.getElementById("demo").innerText = details1.toString();
     }
   </script>
